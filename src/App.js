@@ -1,13 +1,18 @@
 import React, { Component } from "react";
-
-import logo from "./logo.svg";
 import "./App.css";
+import { fetchAllDogs } from "./services/api-helper";
 
 class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      dogs: []
+    };
+  }
+
+  async componentDidMount() {
+    const dogs = await fetchAllDogs();
   }
 
   render() {
