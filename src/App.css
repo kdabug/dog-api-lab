@@ -28,3 +28,30 @@ body {
   margin: 20px;
   color: white;
 }
+.header {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+.button-container {
+  padding: 20px;
+  display: flex;
+  align-content: center;
+  margin: 0 auto;
+}
+
+li {
+  list-style-type: none;
+  padding: 2px;
+}
+
+.set-view {
+  border: 1px solid darkblue;
+  border-radius: 5px;
+  width: 100px;
+  margin: 2px;
+}
+
+.set-view:hover {
+  background-color: grey;
+}

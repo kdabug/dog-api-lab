@@ -3,6 +3,7 @@ import "./App.css";
 import { fetchAllDogs, fetchRandomDogPicture } from "./services/api-helper";
 import BreedList from "./components/BreedList";
 import RandomDogs from "./components/RandomDogs";
+import Header from "./components/Header";
 
 class App extends Component {
   constructor(props) {

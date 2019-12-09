@@ -2,18 +2,17 @@ import React from "react";
 
 function Header(props) {
   return (
-    <ul>
+    <div className="header">
       <h1>My Dog Website</h1>
-      <li className="header-button" onClick={() => props.setView("dog breeds")}>
-        Dog List
-      </li>
-      <li
-        className="header-button"
-        onClick={() => props.setView("random dogs")}
-      >
-        Dog Pics
-      </li>
-    </ul>
+      <ul className="button-container">
+        <li className="set-view" onClick={() => props.setView("dog breeds")}>
+          Dog List
+        </li>
+        <li className="set-view" onClick={() => props.setView("random dogs")}>
+          Dog Pics
+        </li>
+      </ul>
+    </div>
   );
 }
 
