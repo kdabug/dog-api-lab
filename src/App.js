@@ -12,9 +12,34 @@ class App extends Component {
       dogs: null,
       randomPicture: null,
       currentPic: "",
-      breed: ""
+      breed: "",
+      currentView: ""
     };
   }
+
+  setView = currentView => {
+    this.setState({
+      currentView
+    });
+  };
+
+  pageView = () => {
+    switch (this.state.currentView) {
+      case "random dogs":
+        return (
+          <RandomDogs
+            name="breed"
+            onChange={this.handleChange}
+            onSubmit={this.handlePictureSubmit}
+            randomPic={this.state.randomPicture}
+          />
+        );
+      default:
+        return (
+          <BreedList dogs={this.state.dogs} getBreeds={this.fetchDogData} />
+        );
+    }
+  };
 
   handleChange = e => {
     console.log(e.target.name);
@@ -47,14 +72,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>DOG APP</h1>
-        <BreedList dogs={this.state.dogs} getBreeds={this.fetchDogData} />
-        <RandomDogs
-          name="breed"
-          onChange={this.handleChange}
-          onSubmit={this.handlePictureSubmit}
-          randomPic={this.state.randomPicture}
-        />
+        <Header setView={this.setView} /> {this.pageView()}
       </div>
     );
   }
