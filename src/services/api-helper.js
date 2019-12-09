@@ -6,6 +6,8 @@ export const fetchAllDogs = async () => {
 };
 
 export const fetchRandomDogPicture = async breed => {
-  const resp = await axios.get(`https://dog.ceo/api/breed/hound/images/random`);
-  console.log(resp);
+  const resp = await axios.get(
+    `https://dog.ceo/api/breed/${breed}/images/random`
+  );
+  return resp.data.message;
 };
