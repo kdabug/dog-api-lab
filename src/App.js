@@ -31,8 +31,9 @@ class App extends Component {
           <RandomDogs
             name="breed"
             onChange={this.handleChange}
-            onSubmit={this.handlePictureSubmit}
+            fetchPicture={this.fetchDogPicture}
             randomPic={this.state.randomPicture}
+            input={this.state.breed}
           />
         );
       default:
@@ -43,16 +44,11 @@ class App extends Component {
   };
 
   handleChange = e => {
-    console.log(e.target.name);
+    console.log(e.target);
     const { name, value } = e.target;
     this.setState({
       [name]: value
     });
-  };
-
-  handlePictureSubmit = async () => {
-    console.log(this.state.breed);
-    await this.fetchDogPicture(this.state.breed);
   };
 
   fetchDogData = async () => {

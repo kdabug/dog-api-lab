@@ -7,13 +7,12 @@ function RandomDogs(props) {
         <input
           onChange={props.onChange}
           name={props.name}
-          value={props.value}
           placeholder="Enter a dog breed"
         ></input>
         <button
           onClick={async e => {
             e.preventDefault();
-            await props.onSubmit();
+            await props.fetchPicture(props.input);
           }}
         >
           Submit
